@@ -1,24 +1,24 @@
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Signup from './pages/Signup.jsx';
-import Signin from './pages/Signin.jsx';
-import Home from './pages/Home.jsx';
-import Start from './pages/Start.jsx';
-import ProtectedRoute from './components/ProtectedRoute.jsx'
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Register from './components/Register';
+import Login from './components/Login';
+import MainPage from './pages/MainPage';
 
-function App() {
-
+const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-    <Routes>
-        <Route path='/' element={<Start />}/>
-        <Route path='/signup' element={<Signup />}></Route>
-        <Route path='/signin' element={<Signin />}></Route>
-        <Route path='/home' element={<ProtectedRoute><Home /></ProtectedRoute>}></Route>
-    </Routes>
-    </BrowserRouter>
-    </div>
-  )
-}
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/main" element={<MainPage />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;

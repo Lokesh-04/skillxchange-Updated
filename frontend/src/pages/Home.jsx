@@ -1,11 +1,18 @@
-import React from 'react'
+// src/pages/Home.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
-function Home() {
+const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="home-container">
+      <h1>Welcome to the App</h1>
+      <div className="auth-links">
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
